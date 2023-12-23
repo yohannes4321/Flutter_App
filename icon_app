@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(
+      home: Home(),
+    ));
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Anbesa Public Transport'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Icon(
+          Icons.airport_shuttle,
+          size: 30,
+          color: Colors.red, // fix error: replace `red` with `Colors.red`
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Text('click'),
+        onPressed: () {},
+      ),
+    );
+  }
+}
+
