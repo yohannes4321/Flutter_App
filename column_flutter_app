@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(home: Home()));
+}
+
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter App'),
+        centerTitle: true,
+        backgroundColor: Colors.green,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            'Hello Customers',
+            style: TextStyle(fontSize: 24),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              print('You clicked me');
+            },
+            child: Text('Click'),
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.all(20),
+            color: Colors.grey,
+          ),
+          Text(
+            'Good Morning',
+            style: TextStyle(fontSize: 18),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Register'),
+        backgroundColor: Colors.blue,
+      ),
+    );
+  }
+}            'Good Morning',
+            style: TextStyle(fontSize: 18),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Register'),
+        backgroundColor: Colors.blue,
+      ),
+    );
+  }
+}
+
