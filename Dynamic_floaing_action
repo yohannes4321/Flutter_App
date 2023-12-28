@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(
+      home: Home(),
+    ));
+
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int yohannesCount = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter app'),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: <Widget>[
+          Text(
+            '${yohannesCount}',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.red,
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            yohannesCount += 1;
+          });
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
