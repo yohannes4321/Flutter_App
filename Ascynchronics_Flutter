@@ -1,0 +1,69 @@
+import 'package:flutter/material.dart';
+
+class Chooselocation extends StatefulWidget {
+  @override
+  State<Chooselocation> createState() => _ChooselocationState();
+}
+
+class _ChooselocationState extends State<Chooselocation> {
+  int counter = 0; //
+  void getdata() async {
+    String username = await Future.delayed(Duration(seconds: 2), () {
+      return 'the first delay';
+    });
+    print('hello');
+    String username1 = await Future.delayed(Duration(seconds: 1), () {
+      return 'second delay but delayed one second';
+    });
+    print('$username-$username1');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getdata();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print('builder printed');
+    return Scaffold(
+        backgroundColor: Colors.grey[200],
+        appBar: AppBar(
+          title: Text('Choose Location'),
+          centerTitle: true,
+        ),
+        body: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 10,
+            ),
+            ElevatedButton.icon(
+                onPressed: () {
+                  setState(() {
+                    counter += 1;
+                  });
+                },
+                icon: Icon(Icons.add),
+                label: Text(
+                  'Add',
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 34,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            Text('${counter}',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                ))
+          ],
+        ));
+  }
+}
+
